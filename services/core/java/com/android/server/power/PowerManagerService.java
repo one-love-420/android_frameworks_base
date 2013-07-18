@@ -293,7 +293,7 @@ public final class PowerManagerService extends SystemService
     // True to decouple interactive mode from the display state.
     private boolean mDecoupleHalInteractiveModeFromDisplayConfig;
 
-    // True if the device should wake up when plugged or unplugged.
+    // True if the device should wake up when plugged or unplugged (default from config.xml)
     private boolean mWakeUpWhenPluggedOrUnpluggedConfig;
 
     // True if the device should suspend when the screen is off due to proximity.
@@ -366,6 +366,9 @@ public final class PowerManagerService extends SystemService
     // The stay on while plugged in setting.
     // A bitfield of battery conditions under which to make the screen stay on.
     private int mStayOnWhilePluggedInSetting;
+
+    // True if the device should wake up when plugged or unplugged
+    private int mWakeUpWhenPluggedOrUnpluggedSetting;
 
     // True if the device should stay on.
     private boolean mStayOn;
@@ -577,6 +580,9 @@ public final class PowerManagerService extends SystemService
             resolver.registerContentObserver(Settings.Global.getUriFor(
                     Settings.Global.STAY_ON_WHILE_PLUGGED_IN),
                     false, mSettingsObserver, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.Global.getUriFor(
+                    Settings.Global.WAKE_WHEN_PLUGGED_OR_UNPLUGGED),
+                    false, mSettingsObserver, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.SCREEN_BRIGHTNESS),
                     false, mSettingsObserver, UserHandle.USER_ALL);
@@ -660,6 +666,9 @@ public final class PowerManagerService extends SystemService
                 UserHandle.USER_CURRENT);
         mStayOnWhilePluggedInSetting = Settings.Global.getInt(resolver,
                 Settings.Global.STAY_ON_WHILE_PLUGGED_IN, BatteryManager.BATTERY_PLUGGED_AC);
+        mWakeUpWhenPluggedOrUnpluggedSetting = Settings.Global.getInt(resolver,
+                Settings.Global.WAKE_WHEN_PLUGGED_OR_UNPLUGGED,
+                (mWakeUpWhenPluggedOrUnpluggedConfig ? 1 : 0));
 
         final int oldScreenBrightnessSetting = mScreenBrightnessSetting;
         mScreenBrightnessSetting = Settings.System.getIntForUser(resolver,
@@ -1385,8 +1394,8 @@ public final class PowerManagerService extends SystemService
 
     private boolean shouldWakeUpWhenPluggedOrUnpluggedLocked(
             boolean wasPowered, int oldPlugType, boolean dockedOnWirelessCharger) {
-        // Don't wake when powered unless configured to do so.
-        if (!mWakeUpWhenPluggedOrUnpluggedConfig) {
+        // Don't wake when powered if disabled in settings.
+        if (mWakeUpWhenPluggedOrUnpluggedSetting == 0) {
             return false;
         }
 
