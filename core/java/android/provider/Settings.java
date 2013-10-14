@@ -2960,6 +2960,11 @@ public final class Settings {
         public static final String DOUBLE_TAP_SLEEP_GESTURE = "double_tap_sleep_gesture";
 
         /**
+         * Control whether the process CPU info meter should be shown.
+         */
+        public static final String SHOW_CPU = "show_cpu";
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
