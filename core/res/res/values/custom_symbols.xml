@@ -109,4 +109,8 @@
   <java-symbol type="string" name="adb_net_active_notification_title" />
   <java-symbol type="string" name="adb_both_active_notification_title" />
   <java-symbol type="string" name="adb_active_generic_notification_message" />
+
+  <!-- Support for disabling to fetch APN from OMH card
+         for some cdma carriers -->
+  <java-symbol type="bool" name="config_fetch_apn_from_omh_card" />
 </resources>
