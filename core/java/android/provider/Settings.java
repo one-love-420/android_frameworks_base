@@ -2960,11 +2960,6 @@ public final class Settings {
         public static final String DOUBLE_TAP_SLEEP_GESTURE = "double_tap_sleep_gesture";
 
         /**
-         * Control whether the process CPU info meter should be shown.
-         */
-        public static final String SHOW_CPU = "show_cpu";
-
-        /**
          * The delay when killing the app on long press takes place
          *
          * @hide
@@ -6778,6 +6773,11 @@ public final class Settings {
          * Control whether the process CPU usage meter should be shown.
          */
         public static final String SHOW_PROCESSES = "show_processes";
+
+        /**
+         * Control whether the process CPU info meter should be shown.
+         */
+        public static final String SHOW_CPU = "show_cpu";
 
         /**
          * If 1 low power mode is enabled.
