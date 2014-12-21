@@ -1584,7 +1584,8 @@ class AlarmManagerService extends SystemService {
                     setImplLocked(alarm.type, alarm.when + delta, nextElapsed, alarm.windowLength,
                             maxTriggerTime(nowELAPSED, nextElapsed, alarm.repeatInterval),
                             alarm.repeatInterval, alarm.operation, batch.standalone, true,
-                }            alarm.workSource, alarm.alarmClock, alarm.userId, false);
+                            alarm.workSource, alarm.alarmClock, alarm.userId, false);
+                }
 
                 if (alarm.wakeup) {
                     hasWakeup = true;
