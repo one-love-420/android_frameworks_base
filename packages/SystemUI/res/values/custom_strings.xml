@@ -18,5 +18,7 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-
+    <!-- Heads up toast -->
+    <string name="heads_up_enabled">Heads up notifications are enabled</string>
+    <string name="heads_up_disabled">Heads up notifications are disabled</string>
 </resources>
