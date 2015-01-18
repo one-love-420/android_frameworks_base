@@ -27,4 +27,9 @@
     <!-- label for screen record item in phone options dialog -->
     <string name="global_action_screen_record">Enregistrement d\'écran</string>
 
+<<<<<<< HEAD
+=======
+    <string name="android_upgrading_fstrim">Optimisation du stockage.</string>
+
+>>>>>>> 706465c98de2ffd131a1a31bc1fd2f13195b6541
 </resources>
