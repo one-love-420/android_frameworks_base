@@ -143,7 +143,6 @@
   <java-symbol type="drawable" name="ic_lock_screen_record" />
   <java-symbol type="string" name="global_action_screen_record" />
 
-<<<<<<< HEAD
   <!-- AOKP custom system animations -->
   <java-symbol type="string" name="action_null"/>
   <java-symbol type="string" name="animation_fade"/>
