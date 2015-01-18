@@ -143,7 +143,6 @@
   <java-symbol type="drawable" name="ic_lock_screen_record" />
   <java-symbol type="string" name="global_action_screen_record" />
 
-<<<<<<< HEAD
   <!-- AOKP custom system animations -->
   <java-symbol type="string" name="action_null"/>
   <java-symbol type="string" name="animation_fade"/>
@@ -186,20 +185,5 @@
   <java-symbol type="anim" name="slide_out_left_no_fade" />
   <java-symbol type="anim" name="slide_in_left_no_fade" />
   <java-symbol type="anim" name="slide_out_right_no_fade" />
-=======
-  <!-- Power menu -->
-  <java-symbol type="drawable" name="ic_lock_screenshot" />
-  <java-symbol type="string" name="global_action_screenshot" />
-  <java-symbol type="drawable" name="ic_lock_settings" />
-  <java-symbol type="drawable" name="ic_lock_user" />
-
-  <!-- Theme install failure notification -->
-  <java-symbol type="string" name="theme_install_error_title" />
-  <java-symbol type="string" name="theme_install_error_message" />
-
-  <!-- First boot install dialog -->
-  <java-symbol type="string" name="android_installing_apk" />
-  <java-symbol type="string" name="android_installing_title" />
->>>>>>> 706465c98de2ffd131a1a31bc1fd2f13195b6541
 
 </resources>
